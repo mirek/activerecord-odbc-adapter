@@ -1024,7 +1024,7 @@ begin
             odbcNullable = col[10] # SQLColumns: NULLABLE
             # isNotNullable == true  => *definitely not* nullable
             #               == false => *may* be nullable
-            isNotNullable = (odbcIsNullable.match('NO') != nil)
+            isNotNullable = (odbcIsNullable.to_s.match(/NO|0/) != nil)
             # Assume column is nullable if odbcNullable == SQL_NULLABLE_UNKNOWN
             colNullable = !(isNotNullable || odbcNullable == SQL_NO_NULLS)
             
