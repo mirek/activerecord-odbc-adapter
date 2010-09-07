@@ -1,0 +1,21 @@
+# ODBC Adapter for Ruby/Ruby on Rails ActiveRecord
+
+Works with Sybase/mssql and others.
+
+## Installation
+
+    # Make sure you've got ruby-odbc
+    sudo gem install ruby-odbc
+    
+    # You can install adapter as a Rails plugin
+    ruby script/plugin install git://github.com/mirek/activerecord-odbc-adapter.git
+    
+    or
+    
+    rails plugin install git://github.com/mirek/activerecord-odbc-adapter.git
+    
+    # Setup your DSN connection string in database.yml
+    
+    [development]
+    adapter: odbc
+    conn_str: 'DRIVER={TDS};TDS_Version=5.0;Trace=No;Pooling=Yes;SERVER=localhost;DATABASE=my_development;Port=8000;uid=thatsme;pwd=secret;'
